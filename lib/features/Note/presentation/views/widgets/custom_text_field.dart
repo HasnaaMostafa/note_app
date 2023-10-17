@@ -26,7 +26,7 @@ class CustomTextField extends StatelessWidget {
       child: TextFormField(
         onChanged: onChange,
         maxLines: maxLines,
-        cursorColor: const Color(0xff62FCD7),
+        cursorColor: Colors.grey,
         decoration: InputDecoration(
           suffixIcon: suffixIcon,
           contentPadding: const EdgeInsets.only(left: 10),
