@@ -10,9 +10,10 @@ class AddNoteCubit extends Cubit<AddNoteState> {
   AddNoteCubit() : super(AddNoteInitialState());
 
   Color color = const Color(0xff095256);
+  int selectedColorIndex = 0;
 
   addNote(NoteModel noteModel) async {
-    noteModel.color = color.value;
+    noteModel.color = colors[selectedColorIndex].value;
 
     emit(AddNoteLoadingState());
     try {
@@ -23,5 +24,10 @@ class AddNoteCubit extends Cubit<AddNoteState> {
     } catch (error) {
       emit(AddNoteErrorState(error: error.toString()));
     }
+  }
+
+  void selectColor(int index) {
+    selectedColorIndex = index;
+    emit(AddNoteColorChangedState());
   }
 }

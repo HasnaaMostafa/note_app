@@ -12,3 +12,7 @@ class AddNoteErrorState extends AddNoteState {
   final String error;
   AddNoteErrorState({required this.error});
 }
+
+class AddNoteColorChangedState extends AddNoteState {
+  AddNoteColorChangedState();
+}
